@@ -1,17 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="clk">
-    
-    <h1 id="text"></h1>
-   
-    <script src="clock.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="calci">
+      <form>
+        <input type="text" id="res" />
+        <br/>
+        <br/>
+        <div class="buttons">
+          <div class="one">
+            <input type="button" value="1" onclick="display(parseInt(value))" />
 
-</body>
+            <input type="button" value="2" onclick="display(parseInt(value))" />
+
+            <input type="button" value="3" onclick="display(parseInt(value))" />
+
+            <input type="button" value="+" onclick="display(value)" />
+          </div>
+          <div>
+            <input type="button" value="4" onclick="display(parseInt(value))" />
+
+            <input type="button" value="5" onclick="display(parseInt(value))" />
+
+            <input type="button" value="6" onclick="display(parseInt(value))" />
+
+            <input type="button" value=" -" onclick="display(value)" />
+          </div>
+          <div>
+            <input type="button" value="7" onclick="display(parseInt(value))" />
+
+            <input type="button" value="8" onclick="display(parseInt(value))" />
+
+            <input type="button" value="9" onclick="display(parseInt(value))" />
+
+            <input type="button" value=" *" onclick="display(value)" />
+          </div>
+          <div>
+            <input type="button" value="/" onclick="display(value)" />
+
+            <input type="button" value="0" onclick="display(parseInt(value))" />
+
+            <input type="button" value="%" onclick="display(value)" />
+
+            <input type="button" value="=" onclick="calculate()" />
+          </div>
+          <div>
+            <br />
+            <input
+              type="button"
+              class="clear"
+              value="clear text"
+              onclick="clr()"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+      function clr() {
+        document.getElementById("res").value = "";
+      }
+      function display(val) {
+        document.getElementById("res").value += val;
+      }
+      function calculate() {
+        let x = document.getElementById("res").value;
+
+        let y = eval(x);
+        document.getElementById("res").value = y;
+      }
+    </script>
+  </body>
 </html>
